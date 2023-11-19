@@ -52,7 +52,7 @@ let map;
         unicorn = result.Unicorn;
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         //displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
-        displayUpdate('David, your ' + unicorn.Color + ' unicorn, is on his way.');
+        displayUpdate('David, your ' + unicorn.Color + ' unicorn, is on his way.', unicorn.Color);
 
         console.log(pickupLocation);
         //  get the local weather, find nearby restaurants, movies
@@ -60,7 +60,7 @@ let map;
 
         animateArrival(function animateCallback() {
             //displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
-            displayUpdate('David has arrived. Giddy up!');
+            displayUpdate('David has arrived. Giddy up!', unicorn.Color);
             WildRydes.map.unsetLocation();
 
             $('#request').prop('disabled', 'disabled');
