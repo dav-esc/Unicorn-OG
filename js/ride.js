@@ -174,7 +174,7 @@ let map;
 //  these functions below here are my utility functions
 //      to present messages to users
 //      and to particularly add some 'sizzle' to the application
-const API_urlurl = `https://api.thecatapi.com/v1/breeds`;
+const API_url = `https://api.thecatapi.com/v1/breeds`;
 
 const API_key = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
 
