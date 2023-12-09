@@ -59,6 +59,10 @@ html, body, #main, #map {
   max-width: 10%;
   max-height: 10%;
 }
+.img {
+  max-width: 10%;
+  max-height: 10%;
+}
 .cat_information {
   display: grid;
   justify-content: center;
