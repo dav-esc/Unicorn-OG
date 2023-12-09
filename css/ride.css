@@ -61,8 +61,8 @@ html, body, #main, #map {
   height: 25%;
 }
 .img {
-width: auto;
-height: auto;
+max-width:30px;
+max-height: 30px;
 }
 .cat_information {
   display: grid;
