@@ -174,105 +174,62 @@ let map;
 //  these functions below here are my utility functions
 //      to present messages to users
 //      and to particularly add some 'sizzle' to the application
-const API_URL = `https://api.thecatapi.com/v1/`;
-const API_KEY = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
+const url = `https://api.thecatapi.com/v1/breeds`;
 
-let currentImageToVoteOn;
+const api_key = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
 
-function showHistoricVotes()
-{
-  
-  document.getElementById('vote-options').style.display = 'none';
-  document.getElementById('vote-results').style.display = 'block';
+// a variable to store the information about the breeds
 
-  const url = `${API_URL}votes?limit=10&order=DESC`;
+let storedBreeds = [];
 
-  fetch(url,{headers: {
-    'x-api-key': API_KEY
-  }})
+// a function to select a random breed
+
+function getRandomInt(min, max) {
+return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// a function to show images and information of the breeds
+function showCatImageAndInformation(index) {
+
+// This will display the image of the cat
+  document.getElementById("cat_image").src = storedBreeds[index].image.url;
+
+// This will get the breed name
+  document.getElementById("breed_name").innerHTML = storedBreeds[index].name;
+
+// This will get the wiki link
+  document.getElementById("wiki_link").href = storedBreeds[index].wikipedia_url;
+
+  document.getElementById("wiki_link").innerHTML =
+    storedBreeds[index].wikipedia_url;  
+
+// This will get the characteristics of the cat
+  document.getElementById("breed_json").textContent =
+    storedBreeds[index].temperament;
+}
+
+
+// a function to retrieve data from the API
+fetch(url, {
+  headers: {
+    "x-api-key": api_key,
+  },
+})
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-  
-    data.map(function(voteData) {
- 
-    const imageData = voteData.image
- 
-    let image = document.createElement('img');
-     //use the url from the image object
-     image.src = imageData.url
-            
-    let gridCell = document.createElement('div');
-    
-      if(voteData.value<0)
-      {
-        gridCell.classList.add('red') 
-      } else {
-        gridCell.classList.add('green')
-      }
-      
-    gridCell.classList.add('col-lg');
+    // Storing the retrieved data from the API in our variable
+    storedBreeds = data;
 
-    gridCell.appendChild(image)
-       
-    document.getElementById('grid').appendChild(gridCell);
-       
-    });
-  
+
+    // Using the random function to select a specific breed. Then extracting information from that breed
+    showCatImageAndInformation(getRandomInt(0, storedBreeds.length - 1));
   })
-  .catch(function(error) {
-     console.log(error);
+  .catch(function (error) {
+    console.log(error);
   });
-  
-}
-
-function showVoteOptions()
-{
-  document.getElementById("grid").innerHTML = '';
-  
-  document.getElementById('vote-options').style.display = 'block';
-  document.getElementById('vote-results').style.display = 'none';
-  
-  showImageToVoteOn()
-}
-
-function showImageToVoteOn()
-{
-  
-  const url = `${API_URL}images/search`;
-
-  fetch(url,{headers: {
-    'x-api-key': API_KEY
-  }})
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    currentImageToVoteOn = data[0];
-    document.getElementById("image-to-vote-on").src= currentImageToVoteOn.url;
-  });
-
-}
-
-function vote(value)
-{
-  
-  const url = `${API_URL}votes/`;
-  const body = {
-    image_id:currentImageToVoteOn.id,
-    value
-  }
-  fetch(url,{method:"POST",body:JSON.stringify(body),headers: {
-    'content-type':"application/json",
-    'x-api-key': API_KEY
-  }})
-  .then((response) => {
-    showVoteOptions()
-  })
-}
-
-showVoteOptions()
 //  displayUpdate
 //      nice utility method to show message to user
 function displayUpdate(text, color='green') {

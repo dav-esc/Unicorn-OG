@@ -21,6 +21,19 @@
 </head>
 
 <body>
+ <!-- Cat Image -->
+ <div>
+    <img id="cat_image" class="img"></img>
+  </div>
+  
+  <!-- Cat Information -->
+  <div class="cat_information">
+    <h4 id="breed_name"></h4>
+    Wiki Link: <a id="wiki_link" target="_blank"></a> <br />
+    Breed Characteristics:
+    <div id="breed_json"></div>
+  </div>
+
     <div class="info panel panel-default">
         <div class="panel-heading">
             <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
@@ -85,10 +98,6 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        </div>
-    </div>
-    <div>
-        <img id="image-to-vote-on" class="col-lg"></img>
         </div>
     </div>
 
