@@ -57,8 +57,8 @@ html, body, #main, #map {
 }
 .cat_image {
   margin: 0% 25% 0%;
-  width: 2rem;
-  height: 2rem;
+  width: 10px;
+  height: 10px;
   border-radius: 2px;
   border: 2px double red;
 }
