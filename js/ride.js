@@ -192,7 +192,7 @@ return Math.floor(Math.random() * (max - min + 1)) + min;
 // a function to show images and information of the breeds
 function showCatImageAndInformation(index) {
 
-//the image of the cat
+// This will display the image of the cat
   document.getElementById("cat_image").src = storedBreeds[index].image.url;
 
 // breed name
@@ -203,6 +203,8 @@ function showCatImageAndInformation(index) {
 
   document.getElementById("wiki_link").innerHTML =
     storedBreeds[index].wikipedia_url;  
+}
+
 
 // a function to retrieve data from the API
 fetch(API_url, {
@@ -218,7 +220,7 @@ fetch(API_url, {
     storedBreeds = data;
 
 
-    // Using the random func to select a breed 
+    // Using the random function to select a breed
     showCatImageAndInformation(getRandomInt(0, storedBreeds.length - 1));
   })
   .catch(function (error) {
