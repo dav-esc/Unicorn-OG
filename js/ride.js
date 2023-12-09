@@ -174,9 +174,9 @@ let map;
 //  these functions below here are my utility functions
 //      to present messages to users
 //      and to particularly add some 'sizzle' to the application
-const url = `https://api.thecatapi.com/v1/breeds`;
+const API_urlurl = `https://api.thecatapi.com/v1/breeds`;
 
-const api_key = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
+const API_key = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
 
 // a variable to store the information about the breeds
 
@@ -211,9 +211,9 @@ function showCatImageAndInformation(index) {
 
 
 // a function to retrieve data from the API
-fetch(url, {
+fetch(API_url, {
   headers: {
-    "x-api-key": api_key,
+    "x-api-key": API_key,
   },
 })
   .then((response) => {
