@@ -175,7 +175,7 @@ let map;
 //      to present messages to users
 //      and to particularly add some 'sizzle' to the application
 const API_URL = `https://api.thecatapi.com/v1/`;
-const API_KEY = "DEMO-API-KEY";
+const API_KEY = "live_IhoDZOwQtiRrI9Y8JsmJY6bJDwTlQ60mkePbwpjV49Tzd3leEjNOv5dLxvrFGaom";
 
 let currentImageToVoteOn;
 
