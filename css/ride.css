@@ -56,12 +56,13 @@ html, body, #main, #map {
     width: 100%;
 }
 .cat_image { 
-  max-width: 10%;
-  max-height: 10%;
+  margin: 0% 25% 0%;
+  width: 50%;
+  height: 25%;
 }
 .img {
-  max-width: 50%;
-  max-height: 50%;
+width: auto;
+height: auto;
 }
 .cat_information {
   display: grid;
