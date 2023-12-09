@@ -184,7 +184,9 @@ let storedBreeds = [];
 
 // a function to select a random breed
 
-
+function getRandomInt(min, max) {
+return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
 // a function to show images and information of the breeds
