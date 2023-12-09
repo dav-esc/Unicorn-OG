@@ -55,12 +55,9 @@ html, body, #main, #map {
     word-wrap: break-word;
     width: 100%;
 }
-.cat_image {
-  
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  border: 2px double red;
+.cat_image { 
+  max-width: 10%;
+  max-height: 10%;
 }
 .cat_information {
   display: grid;
