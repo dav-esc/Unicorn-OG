@@ -55,14 +55,11 @@ html, body, #main, #map {
     word-wrap: break-word;
     width: 100%;
 }
-.cat_image { 
+
+.img {
   margin: 0% 25% 0%;
   width: 50%;
   height: 25%;
-}
-.img {
-max-width:30px;
-max-height: 30px;
 }
 .cat_information {
   display: grid;
